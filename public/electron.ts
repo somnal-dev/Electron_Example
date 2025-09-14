@@ -1,5 +1,5 @@
 // public/electron.ts
-import { app, BrowserWindow, ipcMain, nativeImage, screen } from "electron";
+import { app, BrowserWindow, ipcMain } from "electron";
 import path from "path";
 import { fileURLToPath } from "url";
 import isDev from "electron-is-dev";
@@ -104,9 +104,6 @@ function moveMouseInCircle(
 // 커스텀 커서 오버레이 창 생성
 function createCursorOverlay(): void {
   if (cursorOverlay) return;
-
-  const displays = screen.getAllDisplays();
-  const primaryDisplay = displays[0];
 
   cursorOverlay = new BrowserWindow({
     width: 32,
